@@ -1,0 +1,5 @@
+// Redux action constants
+export const ADD_EXPRESSION = 'ADD_EXPRESSION';
+export const INVALID_BUTTON = 'INVALID_BUTTON';
+export const CALCULATE_EXPRESSION = 'CALCULATE_EXPRESSION';
+export const RESET_EXPRESSION = 'RESET_EXPRESSION';
