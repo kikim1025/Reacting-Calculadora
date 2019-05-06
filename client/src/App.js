@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import CalculatorContainer from './components/container/CalculatorContainer';
 
-export default App = () => {
+export default () => {
     return (
-        <div className="App">
-
+        <div id='App'>
+            <CalculatorContainer />
         </div>
     );
 };
