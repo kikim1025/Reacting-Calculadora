@@ -1,8 +1,9 @@
 import React from 'react';
 import Button from '../presentational/Button';
 import './ButtonList.css';
+import PropTypes from 'prop-types';
 
-export default (props) => (
+const ButtonList = (props) => (
     <div id='buttonList'>
         {
             props.BUTTON_LIST.map((b, i) => (
@@ -11,3 +12,11 @@ export default (props) => (
         }
     </div>
 );
+
+ButtonList.propTypes = {
+    BUTTON_LIST: PropTypes.arrayOf(PropTypes.string).isRequired,
+    addExpression: PropTypes.func.isRequired,
+    expression: PropTypes.string.isRequired
+};
+
+export default ButtonList;
