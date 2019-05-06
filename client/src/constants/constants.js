@@ -10,3 +10,6 @@ export const BUTTON_LIST = ['A/C', '+/-', ' % ', ' / ',
                            '4', '5', '6', ' - ',
                            '7', '8', '9', ' + ',
                            '0', '.', '='];
+
+// Define limit on decimal digits to appear on calculator
+export const DECIMAL_DIGITS = 3

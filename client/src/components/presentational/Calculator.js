@@ -1,6 +1,7 @@
 import React from 'react';
 import Screen from './Screen';
 import ButtonList from '../presentational/ButtonList';
+import './Calculator.css';
 
 export default (props) => (
     <div id='calculator'>

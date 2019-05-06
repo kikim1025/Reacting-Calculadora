@@ -11,7 +11,7 @@ export default (state = initState, action) => {
             });
         case INVALID_BUTTON:
             return Object.assign({}, state, { 
-                message: 'Invalid command: ' + action.payload
+                message: 'Invalid:' + action.payload
             });
         case CALCULATE_EXPRESSION: //need to check if after cal done goes wrong
             return Object.assign({}, state, { 

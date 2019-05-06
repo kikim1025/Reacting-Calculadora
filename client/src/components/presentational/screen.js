@@ -1,5 +1,6 @@
 import React from 'react';
 import ScreenString from './ScreenString';
+import './Screen.css';
 
 export default (props) => (
     <div id='screen'>

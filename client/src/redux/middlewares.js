@@ -1,4 +1,4 @@
-import { ADD_EXPRESSION, INVALID_BUTTON, CALCULATE_EXPRESSION, RESET_EXPRESSION } from '../constants/constants';
+import { ADD_EXPRESSION, INVALID_BUTTON, CALCULATE_EXPRESSION, RESET_EXPRESSION, DECIMAL_DIGITS } from '../constants/constants';
 
 // middlewares contain all logical operations
 
@@ -13,7 +13,7 @@ export const checkUserInput = ({ dispatch }) => {
                     return dispatch({ type: RESET_EXPRESSION });
                 } else if (action.payload === '+/-') { // negative sign
                     if (action.expression.length !== 0 && action.expression[action.expression.length - 1].match(/[\d.]/) ) {
-                        return dispatch({ type: INVALID_BUTTON, payload: action.payload });
+                        return dispatch({ type: INVALID_BUTTON, payload: ' ' + action.payload });
                     } else {
                         action.payload = ' -';
                     };
@@ -21,16 +21,19 @@ export const checkUserInput = ({ dispatch }) => {
                     if (action.expression.length === 0 || action.expression[action.expression.length - 1].match(/[\s.-]/)) {
                         return dispatch({ type: INVALID_BUTTON, payload: action.payload });
                     };
+                } else if (action.payload === '.') {
+                    if (action.expression.match(/[.]/)) {
+                        return dispatch({ type: INVALID_BUTTON, payload: ' ' + action.payload });
+                    };
                 } else if (action.payload === '=') { // = button clicked to initiate calculation
                     if (action.expression.length !== 0 && action.expression[action.expression.length - 1].match(/\d/)) {
-                        return dispatch({ type: CALCULATE_EXPRESSION, payload: eval(action.expression).toString() }); // \d/0 => infinity is ok
+                        return dispatch({ type: CALCULATE_EXPRESSION, payload: eval(action.expression).toFixed(DECIMAL_DIGITS) }); // \d/0 => infinity is ok
                     } else {
-                        return dispatch({ type: INVALID_BUTTON, payload: action.payload });
+                        return dispatch({ type: INVALID_BUTTON, payload: ' ' + action.payload });
                     };
                 };
             };
-            console.log(action);
-            return next(action); // simply proceed to ADD_EXPRESSION if any number or . button is clicked
+            return next(action); // simply proceed to ADD_EXPRESSION
         };
     };
 };

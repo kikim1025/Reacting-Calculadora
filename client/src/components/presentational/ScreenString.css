@@ -1,0 +1,18 @@
+.screenString {
+    font-size: 38px;
+    padding: auto;
+    word-wrap: break-word;
+}
+
+#expression {
+    color: yellow;
+    height: 75%;
+    overflow: auto;
+}
+
+#message {
+    color: white;
+    height: 25%;
+    text-align: right;
+    vertical-align: text-bottom;
+}
