@@ -2,7 +2,14 @@
 Frontend calculator app to demonstrate React with Redux
 
 ## Project Overview
+
+### React Redux Structure
 temp react-structure.png
+
+
+![GitHub Logo](/images/logo.png)
+Format: ![](./assets/.png)
+
 
 ## Project Usage
 temp 
