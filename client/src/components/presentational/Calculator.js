@@ -1,6 +1,6 @@
 import React from 'react';
 import Screen from './Screen';
-import ButtonList from '../presentational/ButtonList';
+import ButtonList from './ButtonList';
 import './Calculator.css';
 import PropTypes from 'prop-types';
 

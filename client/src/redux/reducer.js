@@ -13,7 +13,7 @@ export default (state = initState, action) => {
             return Object.assign({}, state, { 
                 message: 'Invalid:' + action.payload
             });
-        case CALCULATE_EXPRESSION: //need to check if after cal done goes wrong
+        case CALCULATE_EXPRESSION:
             return Object.assign({}, state, { 
                 expression: action.payload,
                 message: action.payload
